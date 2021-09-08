@@ -11,7 +11,7 @@ source:
   sha256: 826ab0c3cc9730f2a1ec92b14c3bc80661f278e1f73f2cfa69843b0f5b748410
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   noarch: python
 
@@ -26,7 +26,7 @@ requirements:
     - python >=3.6
     - numpy
     - scipy >=1.7.0
-    - matplotlib
+    - matplotlib-base
     - astropy
     - scikit-learn
     - tables-io
