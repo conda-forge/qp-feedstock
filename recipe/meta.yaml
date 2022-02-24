@@ -1,5 +1,5 @@
 {% set name = "qp" %}
-{% set version = "0.4" %}
+{% set version = "0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,26 +8,25 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/LSSTDESC/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 826ab0c3cc9730f2a1ec92b14c3bc80661f278e1f73f2cfa69843b0f5b748410
+  sha256: 9a78422fa07a543e27093366231a038c1963b73d677019b67032ac772f7b7afa
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   noarch: python
 
 requirements:
   host:
-   - python >=3.6
-   - pip
-   - setuptools_scm <=6.1.0
-   - setuptools_scm_git_archive
+    - python >=3.6
+    - pip
+    - setuptools_scm <=6.1.0
+    - setuptools_scm_git_archive
 
   run:
     - python >=3.6
     - numpy
     - scipy >=1.7.0
     - matplotlib-base
-    - astropy
     - scikit-learn
     - tables-io
 
