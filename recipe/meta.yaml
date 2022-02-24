@@ -27,7 +27,6 @@ requirements:
     - numpy
     - scipy >=1.7.0
     - matplotlib-base
-    - astropy
     - scikit-learn
     - tables-io
 
