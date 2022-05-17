@@ -28,7 +28,7 @@ requirements:
     - scipy >=1.7.0
     - matplotlib-base
     - scikit-learn
-    - tables-io >= 0.7.4
+    - tables-io >=0.7.4
 
 test:
   imports:
