@@ -1,11 +1,11 @@
-About qp
-========
+About qp-feedstock
+==================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qp-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/LSSTDESC/qp
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qp-feedstock/blob/main/LICENSE.txt)
 
 Summary: Quantile parametrization for probability distribution functions.
 
