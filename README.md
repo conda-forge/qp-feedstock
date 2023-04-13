@@ -32,7 +32,8 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-qp-green.svg)](https://anaconda.org/conda-forge/qp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qp.svg)](https://anaconda.org/conda-forge/qp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qp.svg)](https://anaconda.org/conda-forge/qp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qp.svg)](https://anaconda.org/conda-forge/qp) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qp--prob-green.svg)](https://anaconda.org/conda-forge/qp-prob) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qp-prob.svg)](https://anaconda.org/conda-forge/qp-prob) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qp-prob.svg)](https://anaconda.org/conda-forge/qp-prob) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qp-prob.svg)](https://anaconda.org/conda-forge/qp-prob) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-qp--prob--full-green.svg)](https://anaconda.org/conda-forge/qp-prob-full) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qp-prob-full.svg)](https://anaconda.org/conda-forge/qp-prob-full) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qp-prob-full.svg)](https://anaconda.org/conda-forge/qp-prob-full) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qp-prob-full.svg)](https://anaconda.org/conda-forge/qp-prob-full) |
 
 Installing qp
 =============
@@ -44,41 +45,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `qp` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `qp-prob, qp-prob-full` can be installed with `conda`:
 
 ```
-conda install qp
-```
-
-or with `mamba`:
-
-```
-mamba install qp
-```
-
-It is possible to list all of the versions of `qp` available on your platform with `conda`:
-
-```
-conda search qp --channel conda-forge
+conda install qp-prob qp-prob-full
 ```
 
 or with `mamba`:
 
 ```
-mamba search qp --channel conda-forge
+mamba install qp-prob qp-prob-full
+```
+
+It is possible to list all of the versions of `qp-prob` available on your platform with `conda`:
+
+```
+conda search qp-prob --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search qp-prob --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search qp --channel conda-forge
+mamba repoquery search qp-prob --channel conda-forge
 
-# List packages depending on `qp`:
-mamba repoquery whoneeds qp --channel conda-forge
+# List packages depending on `qp-prob`:
+mamba repoquery whoneeds qp-prob --channel conda-forge
 
-# List dependencies of `qp`:
-mamba repoquery depends qp --channel conda-forge
+# List dependencies of `qp-prob`:
+mamba repoquery depends qp-prob --channel conda-forge
 ```
 
 
