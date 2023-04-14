@@ -53,6 +53,25 @@ outputs:
         - pandas
         - pyarrow
 
+  - name: {{ name }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
+        - pytables
+    test:
+      imports:
+        - qp
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
+
 about:
   home: http://github.com/LSSTDESC/{{ name }}
   license: MIT
