@@ -11,29 +11,66 @@ source:
   sha256: df411916147ed57e41ffb0b33e51ccf3e2284c71b21bedfaf90ce24586734113
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  noarch: python
+  number: 1
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-    - setuptools_scm <=6.1.0
-    - setuptools_scm_git_archive
+outputs:
+  - name: {{ name }}-prob
+    script: build_base.sh
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+        - setuptools_scm
+        - setuptools_scm_git_archive
+      run:
+        - python >=3.6
+        - numpy
+        - scipy >=1.7.0
+        - tables-io >=0.8.1
+        - deprecated
+    test:
+      imports:
+        - qp
 
-  run:
-    - python >=3.6
-    - numpy
-    - scipy >=1.7.0
-    - matplotlib-base
-    - scikit-learn
-    - tables-io >=0.7.4
-    - deprecated
+  - name: {{ name }}-prob-full
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
+        - pytables
+    test:
+      imports:
+        - qp
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
 
-test:
-  imports:
-    - qp
+  - name: {{ name }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
+        - pytables
+    test:
+      imports:
+        - qp
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
 
 about:
   home: http://github.com/LSSTDESC/{{ name }}
