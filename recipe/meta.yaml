@@ -1,5 +1,5 @@
 {% set name = "qp" %}
-{% set version = "0.8.5" %}
+{% set version = "0.8.7" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/LSSTDESC/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d10c7f9efae40e73975b9f0e531ca0ded99ebf7adb721b4ab5c4fc4abd21125d
+  sha256: 9d4aa827a8c8131a64e5dd69c0634a0a1b6e9cf347e1ff241699d17a95645eb9
 
 build:
   number: 0
