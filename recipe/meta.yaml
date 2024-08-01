@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/LSSTDESC/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0a810e572ffb55a53ad5cce2443ce1222ee3dc98b74577c21b1f523c7bcb5298
+  sha256: abe0003b15a3a4d5133234c87972b5217cb22a5e8161f54f845291c61bf122c7
 
 build:
   number: 0
