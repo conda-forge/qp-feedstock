@@ -11,7 +11,7 @@ source:
   sha256: 7498cd35bfbecf8beac25f75bb3b01a22e0b3f50acbdf8d4aabfb3d45a5f39bb
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}-prob
@@ -40,7 +40,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
-        - astropy
+        - astropy-base
         - h5py
         - pandas
         - pyarrow
@@ -48,7 +48,7 @@ outputs:
     test:
       imports:
         - qp
-        - astropy
+        - astropy-base
         - h5py
         - pandas
         - pyarrow
@@ -59,7 +59,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
-        - astropy
+        - astropy-base
         - h5py
         - pandas
         - pyarrow
@@ -67,7 +67,7 @@ outputs:
     test:
       imports:
         - qp
-        - astropy
+        - astropy-base
         - h5py
         - pandas
         - pyarrow
