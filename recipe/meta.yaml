@@ -11,7 +11,7 @@ source:
   sha256: 7498cd35bfbecf8beac25f75bb3b01a22e0b3f50acbdf8d4aabfb3d45a5f39bb
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}-prob
@@ -20,17 +20,19 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.6
+        - python {{ python_min }}
         - pip
         - setuptools_scm
         - setuptools_scm_git_archive
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - numpy
         - scipy >=1.7.0
         - tables-io >=0.8.1
         - deprecated
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - qp
 
@@ -46,6 +48,8 @@ outputs:
         - pyarrow
         - pytables
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - qp
         - astropy
@@ -65,6 +69,8 @@ outputs:
         - pyarrow
         - pytables
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - qp
         - astropy
