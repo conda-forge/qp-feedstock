@@ -1,5 +1,6 @@
 {% set name = "qp" %}
-{% set version = "0.9.3" %}
+{% set version = "1.0.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/LSSTDESC/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: a04ebe9440f39327b36c15a496de3fa0f80ac6976a5e5722e2893e92070b4986
+  sha256: 64978b4590d22aa0ecf35a0200431c6e1928255933de61c2d1828396135d1e5d
 
 build:
   number: 0
@@ -20,17 +21,20 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.6
+        - python {{ python_min }}
         - pip
+        - setuptools
         - setuptools_scm
         - setuptools_scm_git_archive
       run:
-        - python >=3.6
-        - numpy
+        - python >={{ python_min }}
+        - numpy >=2.0
         - scipy >=1.7.0
-        - tables-io >=0.8.1
+        - tables-io >=1.0.0
         - deprecated
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - qp
 
@@ -38,39 +42,43 @@ outputs:
     build:
       noarch: python
     requirements:
+      host:
+        - python {{ python_min }}
+        - pip
+        - setuptools
+        - setuptools_scm
+        - setuptools_scm_git_archive
       run:
+        - python >={{ python_min }}
         - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
-        - astropy
-        - h5py
-        - pandas
-        - pyarrow
-        - pytables
+        - tables-io-full
+        - matplotlib-base
+        - pytdigest
+        - scikit-learn >=1.0
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - qp
-        - astropy
-        - h5py
-        - pandas
-        - pyarrow
 
   - name: {{ name }}
     build:
       noarch: python
     requirements:
+      host:
+        - python {{ python_min }}
+        - pip
+        - setuptools
+        - setuptools_scm
+        - setuptools_scm_git_archive
       run:
+        - python >={{ python_min }}
         - {{ pin_subpackage('qp-prob', max_pin='x.x.x') }}
-        - astropy
-        - h5py
-        - pandas
-        - pyarrow
-        - pytables
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - qp
-        - astropy
-        - h5py
-        - pandas
-        - pyarrow
 
 about:
   home: http://github.com/LSSTDESC/{{ name }}
