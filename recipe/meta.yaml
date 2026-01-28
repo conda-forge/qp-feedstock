@@ -1,5 +1,5 @@
 {% set name = "qp" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/q/qp-prob/qp_prob-{{ version }}.tar.gz
-  sha256: adadaaac3f2a9067a26fcd66bdebeec8a9bf2075601f455dc87b9e00118fcfdf
+  sha256: 15e09b258504fe1bab99d25f446a6d8a4896dc44ee34c6b209b9e87d1c34bf6a
 
 build:
   number: 0
